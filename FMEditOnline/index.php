@@ -19,7 +19,7 @@ EOF;
 
 if (isset($_POST['submit'])) {
     if ($_POST['user'] == $user && $_POST['pass'] == $pass) {
-        require_once('../fileHandle.php');
+        require_once('fileHandle.php');
     } else {
         echo "<h1>Fel inloggningsuppgifter!</h1>";
         echo "<p><a href=\"index.php\">Gå tillbaka</a></p>";

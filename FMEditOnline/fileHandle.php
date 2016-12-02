@@ -3,7 +3,7 @@
 header('Content-type: text/html; charset=utf-8');
 
 $fileForm = <<<EOF
-<form enctype="multipart/form-data" action="../fileHandle.php" method="POST">
+<form enctype="multipart/form-data" action="fileHandle.php" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
     Klicka på knappen 'Bläddra' för att välja fil:<br /><input name="fmfile" type="file" />
     <br />
@@ -37,7 +37,7 @@ if (! empty($prevFiles)) {
 if (! isset($_POST['upload'])) {
     echo $fileForm;
     } else {
-        include "FMEditOnline/header.php"; // echo header again
+        include "header.php"; // echo header again
         echo "<section>";
         // Get the filename and extension of uploaded file
         $fileName = basename(($_FILES['fmfile']['name']));
@@ -92,6 +92,6 @@ if ($uploadOk && $encOk) {
     }
 }
 
-include "FMEditOnline/footer.php";
+include "footer.php";
 
 ?>
