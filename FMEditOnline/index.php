@@ -6,8 +6,8 @@ include "FMFuncs.php";
 
 delPrev($uploadDir);
 
-$user = "Mats";
-$pass = "fmedit";
+$user = "foo";
+$pass = "bar";
 
 $loginForm = <<<EOF
 <form method="POST" action="index.php">
