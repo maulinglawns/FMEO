@@ -2,14 +2,17 @@
 
 header('Content-type: text/html; charset=utf-8');
 include "header.php";
+include "FMFuncs.php";
 
-$user = "foo";
-$pass = "bar";
+delPrev($uploadDir);
+
+$user = "Mats";
+$pass = "fmedit";
 
 $loginForm = <<<EOF
 <form method="POST" action="index.php">
-Användare <input type="text" name="user"></input><br/>
-Lösenord <input type="password" name="pass"></input><br/>
+Användare:<br /><input type="text" name="user"></input><br/>
+Lösenord:<br /><input type="password" name="pass"></input><br/><br/>
 <input type="submit" name="submit" value="Skicka"></input>
 </form>
 EOF;
@@ -24,6 +27,8 @@ if (isset($_POST['submit'])) {
 } else {
     echo $loginForm;
 }
+
+include "footer.php";
 
 ?>
 
