@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 header('Content-type: text/html; charset=utf-8');
 include "header.php";
 include "FMfuncs.php";
@@ -19,6 +21,7 @@ EOF;
 
 if (isset($_POST['submit'])) {
     if ($_POST['user'] == $user && $_POST['pass'] == $pass) {
+        $_SESSION['loggedin'] = "true";
         require_once('fileHandle.php');
     } else {
         echo "<h1>Fel inloggningsuppgifter!</h1>";
