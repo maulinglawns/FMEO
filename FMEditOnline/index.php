@@ -2,7 +2,7 @@
 
 header('Content-type: text/html; charset=utf-8');
 include "header.php";
-include "FMFuncs.php";
+include "FMfuncs.php";
 
 delPrev($uploadDir);
 
