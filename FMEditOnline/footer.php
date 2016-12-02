@@ -1,8 +1,8 @@
 <?php
 
 $htmlFooter = <<<EOF
-</html>
 </body>
+</html>
 EOF;
 
 echo $htmlFooter;
