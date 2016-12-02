@@ -87,8 +87,8 @@ if ($uploadOk && $encOk) {
     if (file_exists($newFile)) {
         echo "<h2>Klicka " . "<a download href=\"" . $downloadDir . 
         basename($newFile) . "\">HÄR</a>" . " för att ladda ned filen</h2>";
-        echo "</section>";
         echo "<p><a href=\"/FMEditOnline\">hem</a></p>";
+        echo "</section>";
     }
 }
 
