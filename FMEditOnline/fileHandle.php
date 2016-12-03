@@ -44,7 +44,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
             $fileName = basename(($_FILES['fmfile']['name']));
             $uploadFile = $uploadDir . $fileName; // Full path to uploaded file
         
-			// Insert check here if filename is NULL...
+			//*** Insert check here if filename is NULL... ***//
         
             // Is the file UTF-8?
             if (! mb_check_encoding(file_get_contents($_FILES['fmfile']['tmp_name']), 'UTF-8')) {
