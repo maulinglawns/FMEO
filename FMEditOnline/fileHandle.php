@@ -5,14 +5,13 @@ if (! isset($_SESSION)) {
 }
 
 header('Content-type: text/html; charset=utf-8');
-include "header.php"; // echo header again
+include "header.php";
 
 // Make sure we are logged in
 if (! isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != "true") {
     //$_SESSION['loggedin'] == "false";
     echo "<p>Du har inte behörighet att se den här sidan</p>";
 }
-
 
 $fileForm = <<<EOF
 <form enctype="multipart/form-data" action="fileHandle.php" method="POST">
@@ -34,17 +33,6 @@ $uploadDir = $_SERVER['DOCUMENT_ROOT'] . "/FMEditOnline/uploads/";
 // Need to creat a proper download link that the browser understands
 $downloadDir = "/FMEditOnline/uploads/";
 
-
-// Delete previous uploads
-$prevFiles = glob("$uploadDir*");
-if (! empty($prevFiles)) {
-    foreach($prevFiles as $f) {
-        if (is_file($f)) {
-            unlink($f);
-        }
-    }
-}
-
 // Only run the code below if we are logged in
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
     // Show upload option ($fileForm) if button not clicked
@@ -55,6 +43,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
             // Get the filename and extension of uploaded file
             $fileName = basename(($_FILES['fmfile']['name']));
             $uploadFile = $uploadDir . $fileName; // Full path to uploaded file
+        
+			// Insert check here if filename is NULL...
         
             // Is the file UTF-8?
             if (! mb_check_encoding(file_get_contents($_FILES['fmfile']['tmp_name']), 'UTF-8')) {
