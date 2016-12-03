@@ -5,6 +5,14 @@ if (! isset($_SESSION)) {
 }
 
 header('Content-type: text/html; charset=utf-8');
+include "header.php"; // echo header again
+
+// Make sure we are logged in
+if (! isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != "true") {
+    //$_SESSION['loggedin'] == "false";
+    echo "<p>Du har inte behörighet att se den här sidan</p>";
+}
+
 
 $fileForm = <<<EOF
 <form enctype="multipart/form-data" action="fileHandle.php" method="POST">
@@ -37,13 +45,12 @@ if (! empty($prevFiles)) {
     }
 }
 
-// Make sure we are logged in
-if ($_SESSION['loggedin'] == "true") {
+// Only run the code below if we are logged in
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
     // Show upload option ($fileForm) if button not clicked
     if (! isset($_POST['upload'])) {
         echo $fileForm;
         } else {
-            include "header.php"; // echo header again
             echo "<section>";
             // Get the filename and extension of uploaded file
             $fileName = basename(($_FILES['fmfile']['name']));
