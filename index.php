@@ -16,9 +16,9 @@ $pass = "bar";
 
 $loginForm = <<<EOF
 <form method="POST" action="index.php">
-Användare:<br /><input type="text" name="user"></input><br/>
-Lösenord:<br /><input type="password" name="pass"></input><br/><br/>
-<input type="submit" name="submit" value="Skicka"></input>
+Användare:<br /><input type="text" name="user"><br/>
+Lösenord:<br /><input type="password" name="pass"><br/><br/>
+<input type="submit" name="submit" value="Skicka">
 </form>
 EOF;
 
