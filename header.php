@@ -17,7 +17,7 @@ header {
     color: black;
 }
 form {
-    width: 300px;
+    width: 400px;
     margin: auto;
     text-align: left;
 }
@@ -34,6 +34,29 @@ footer {
     margin: auto;
     margin-top: 20px;
     font-variant: small-caps;
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+
+footer a {
+    color: white;
 }
 </style>
 </head>

@@ -15,7 +15,8 @@ if (! isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != "true") {
 $fileForm = <<<EOF
 <form enctype="multipart/form-data" action="fileHandle.php" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
-    Klicka på knappen 'Bläddra' för att välja fil:<br /><input name="fmfile" type="file" />
+    <p>Klicka på knappen 'Bläddra' för att välja fil:</p>
+    <input name="fmfile" type="file" />
     <br />
     <input type="submit" name="upload" value="Skicka fil" />
 </form>
@@ -103,7 +104,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
             echo "<h2>Klicka " . "<a download href=\"" . $downloadDir . 
             basename($newFile) . "\">HÄR</a>" . " för att ladda ned filen</h2>";
             echo "<p>Klicka <a href=\"\">här</a> för att ladda upp en ny fil.</p>";
-            echo "<p>När du är färdig, glöm inte att <strong>logga ut</strong></p>";
+            echo "<p>När du är färdig, glöm inte att <a href=\"logout.php\">logga ut</a>.</p>";
             echo "</section>";
         }
     }
