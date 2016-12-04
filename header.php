@@ -29,6 +29,9 @@ h1 {
     text-shadow: 2px 2px lightgray;
     font-family: sans-serif;
 }
+footer {
+    font-variant: small-caps;
+}
 </style>
 </head>
 <body>
