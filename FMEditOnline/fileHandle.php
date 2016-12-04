@@ -24,6 +24,7 @@ EOF;
 
 $uploadOk = False;
 $encOk = False;
+$fileNameOk = True;
 $localFile = "";
 $fileName = "";
 
@@ -44,20 +45,25 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
             $fileName = basename(($_FILES['fmfile']['name']));
             $uploadFile = $uploadDir . $fileName; // Full path to uploaded file
         
-            //**** Insert check here if filename is NULL... ****//
-        
-            // Is the file UTF-8?
-            if (! mb_check_encoding(file_get_contents($_FILES['fmfile']['tmp_name']), 'UTF-8')) {
-                echo "<p style=\"color: red;\">Filen har fel teckenkodning (inte UTF-8). Avbryter.</p>";
+            // Check if filename is empty
+            if (empty($fileName)) {
+                $fileOk = False;
+                echo "<p>Du har inte valt någon fil att ladda upp.</p>";
                 echo $fileForm;
-            } else {
-                $encOk = True;
-                if (move_uploaded_file($_FILES['fmfile']['tmp_name'], $uploadFile)) {
-                    //echo "<p>Filen är uppladdad!</p>";
-                    $uploadOk = True;
-                } else {
-                    echo "<p>Oops! Något gick fel. Prova att ladda upp filen igen.</p>";
+            } elseif ($fileNameOk) { //*** Add check for extension here ***//
+                // Is the file UTF-8?
+                if (! mb_check_encoding(file_get_contents($_FILES['fmfile']['tmp_name']), 'UTF-8')) {
+                    echo "<p style=\"color: red;\">Filen har fel teckenkodning (inte UTF-8). Avbryter.</p>";
                     echo $fileForm;
+                } else {
+                    $encOk = True;
+                    if (move_uploaded_file($_FILES['fmfile']['tmp_name'], $uploadFile)) {
+                        //echo "<p>Filen är uppladdad!</p>";
+                        $uploadOk = True;
+                    } else {
+                        echo "<p>Oops! Något gick fel. Prova att ladda upp filen igen.</p>";
+                        echo $fileForm;
+                }
             }
         }
     }
