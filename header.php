@@ -6,7 +6,7 @@ $htmlHeader = <<<EOF
 <head>
 <style>
 body {
-    background: #f2f2f2;
+    background: #80b3ff;
     text-align: center;
 }
 header {
@@ -30,6 +30,9 @@ h1 {
     font-family: sans-serif;
 }
 footer {
+    padding: 2px;
+    margin: auto;
+    margin-top: 20px;
     font-variant: small-caps;
 }
 </style>

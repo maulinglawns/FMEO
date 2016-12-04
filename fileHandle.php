@@ -50,12 +50,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
             // Check if filename is empty
             if (empty($fileName)) {
                 $fileNameOk = False;
-                echo "<p>Du har inte valt någon fil att ladda upp.</p>";
+                echo "<p style=\"color: red;\">Du har inte valt någon fil att ladda upp.</p>";
                 echo $fileForm;
             // If the filename is not empty, do we have the right extension?
             } elseif ($fileExt != "tab") {
                 $fileNameOk = False;
-                echo "<p>Du har laddat upp fel filtyp (ska vara '.tab').</p>";
+                echo "<p style=\"color: red;\">Du har laddat upp fel filtyp (ska vara '.tab').</p>";
                 echo $fileForm;
             // If filename is ok, and have the right extension
             } elseif ($fileNameOk) {
@@ -68,7 +68,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
                     if (move_uploaded_file($_FILES['fmfile']['tmp_name'], $uploadFile)) {
                         $uploadOk = True;
                     } else {
-                        echo "<p>Oops! Något gick fel. Prova att ladda upp filen igen.</p>";
+                        echo "<p style=\"color: red;\">Oops! Något gick fel. Prova att ladda upp filen igen.</p>";
                         echo $fileForm;
                 }
             }
