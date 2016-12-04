@@ -47,7 +47,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
         
             // Check if filename is empty
             if (empty($fileName)) {
-                $fileOk = False;
+                $fileNameOk = False;
                 echo "<p>Du har inte valt någon fil att ladda upp.</p>";
                 echo $fileForm;
             } elseif ($fileNameOk) { //*** Add check for extension here ***//
