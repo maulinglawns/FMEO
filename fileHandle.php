@@ -104,7 +104,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
             echo "<h2>Klicka " . "<a download href=\"" . $downloadDir . 
             basename($newFile) . "\">HÄR</a>" . " för att ladda ned filen</h2>";
             echo "<p>Klicka <a href=\"\">här</a> för att ladda upp en ny fil.</p>";
-            echo "<p>När du är färdig, glöm inte att <a href=\"/FMEditOnline\">logga ut</a></p>";
+            echo "<p>När du är färdig, glöm inte att <strong>logga ut</strong></p>";
             echo "</section>";
         }
     }

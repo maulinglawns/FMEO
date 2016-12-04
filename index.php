@@ -8,6 +8,7 @@ header('Content-type: text/html; charset=utf-8');
 include "header.php";
 include "FMfuncs.php";
 
+// Clean the directory for up/downloads
 delPrev($uploadDir);
 
 $user = "foo";
@@ -25,7 +26,7 @@ if (isset($_POST['submit'])) {
     if ($_POST['user'] == $user && $_POST['pass'] == $pass) {
         $_SESSION['loggedin'] = "true";
         echo "<p>Du är nu inloggad.</p>";
-        echo "<p>Klicka <a href=\"fileHandle.php\">här</a>.</p>";
+        echo "<p>Klicka <a href=\"fileHandle.php\">här</a> för att gå vidare.</p>";
         //require_once('fileHandle.php');
     } else {
         echo "<h1>Fel inloggningsuppgifter!</h1>";
