@@ -44,13 +44,21 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
             // Get the filename and extension of uploaded file
             $fileName = basename(($_FILES['fmfile']['name']));
             $uploadFile = $uploadDir . $fileName; // Full path to uploaded file
+            // Get extension of uploaded file
+            $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
         
             // Check if filename is empty
             if (empty($fileName)) {
                 $fileNameOk = False;
                 echo "<p>Du har inte valt någon fil att ladda upp.</p>";
                 echo $fileForm;
-            } elseif ($fileNameOk) { //*** Add check for extension here ***//
+            // If the filename is not empty, do we have the right extension?
+            } elseif ($fileExt != "tab") {
+                $fileNameOk = False;
+                echo "<p>Du har laddat upp fel filtyp (ska vara '.tab').</p>";
+                echo $fileForm;
+            // If filename is ok, and have the right extension
+            } elseif ($fileNameOk) {
                 // Is the file UTF-8?
                 if (! mb_check_encoding(file_get_contents($_FILES['fmfile']['tmp_name']), 'UTF-8')) {
                     echo "<p style=\"color: red;\">Filen har fel teckenkodning (inte UTF-8). Avbryter.</p>";
@@ -58,7 +66,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == "true") {
                 } else {
                     $encOk = True;
                     if (move_uploaded_file($_FILES['fmfile']['tmp_name'], $uploadFile)) {
-                        //echo "<p>Filen är uppladdad!</p>";
                         $uploadOk = True;
                     } else {
                         echo "<p>Oops! Något gick fel. Prova att ladda upp filen igen.</p>";
