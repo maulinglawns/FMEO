@@ -9,7 +9,6 @@ include "header.php";
 
 // Make sure we are logged in
 if (! isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != "true") {
-    //$_SESSION['loggedin'] == "false";
     echo "<p>Du har inte behörighet att se den här sidan</p>";
 }
 

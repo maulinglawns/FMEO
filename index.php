@@ -22,18 +22,27 @@ Lösenord:<br /><input type="password" name="pass"></input><br/><br/>
 </form>
 EOF;
 
-if (isset($_POST['submit'])) {
-    if ($_POST['user'] == $user && $_POST['pass'] == $pass) {
-        $_SESSION['loggedin'] = "true";
-        echo "<p>Du är nu inloggad.</p>";
-        echo "<p>Klicka <a href=\"fileHandle.php\">här</a> för att gå vidare.</p>";
-        //require_once('fileHandle.php');
+// Initialize the loggedin session var
+if (! isset($_SESSION['loggedin']))  {
+    $_SESSION['loggedin'] = "false";
+}
+
+if ($_SESSION['loggedin'] != "true") {
+    if (isset($_POST['submit'])) {
+        if ($_POST['user'] == $user && $_POST['pass'] == $pass) {
+            $_SESSION['loggedin'] = "true";
+            echo "<p>Du är inloggad.</p>";
+            echo "<p>Klicka <a href=\"fileHandle.php\">här</a> för att gå vidare.</p>";
+        } else {
+            echo "<h1>Fel inloggningsuppgifter!</h1>";
+            echo "<p><a href=\"index.php\">Gå tillbaka</a></p>";
+        }
     } else {
-        echo "<h1>Fel inloggningsuppgifter!</h1>";
-        echo "<p><a href=\"index.php\">Gå tillbaka</a></p>";
+        echo $loginForm;
     }
 } else {
-    echo $loginForm;
+    echo "<p>Du är inloggad.</p>";
+    echo "<p>Klicka <a href=\"fileHandle.php\">här</a> för att gå vidare.</p>";
 }
 
 include "footer.php";

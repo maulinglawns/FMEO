@@ -10,7 +10,8 @@ EOF;
 
 $htmlFooterLogin = <<<EOF
 <footer>
-<p><a href=index.php>hem</a> | <a href=logout.php>logga ut</a></p>
+<p><a href=index.php>hem</a> | <a href=fileHandle.php>ladda upp fil</a> | 
+<a href=logout.php>logga ut</a></p>
 </footer>
 </body>
 </html>
