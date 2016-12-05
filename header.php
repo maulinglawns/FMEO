@@ -17,7 +17,7 @@ header {
     margin: auto;
     margin-bottom: 10px;
     background: white;
-    color: black;
+    color: #0066ff;
 }
 form {
     width: 400px;
@@ -29,7 +29,7 @@ section {
     margin: auto;
 }
 h1 {
-    text-shadow: 2px 2px lightgray;
+    text-shadow: 2px 2px #cce0ff;
 }
 footer {
     padding: 2px;
