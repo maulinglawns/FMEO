@@ -9,7 +9,7 @@ Nevertheless, the license is as below.
 
 # License
 
-    FMEditOnline. A simple text modifier for `.tab` files exported from FileMaker Pro
+    FMEditOnline. A simple text modifier for '.tab' files exported from FileMaker Pro
     Copyright (C) 2016  Magnus Wallin
 
     This program is free software: you can redistribute it and/or modify
