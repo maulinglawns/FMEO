@@ -31,8 +31,9 @@ De enda filer som stöds är tab-separerade textfiler, alltså filer som har fil
 </pre>
 </ul>
 
-<p>Fälten export1 och export2 måste alltid bestå av <code>'@'</code> respektive <code>'#'</code>, 
-annars fungerar inte konverteringen. Filen måste också exporteras som <code>UTF-8</code>:</p>
+<p>Fälten <code>export 1</code> och <code>export 2</code> måste alltid bestå av 
+<code>'@'</code> respektive <code>'#'</code>, annars fungerar inte konverteringen. 
+Filen måste också exporteras som <code>UTF-8</code>:</p>
 <img src="utf8.jpg" />
 <p>Om filen har en annan teckenuppsättning säger programmet ifrån automatiskt.
 Den högsta filstorleken är satt till fyra (4) megabyte. Om filen är större säger programmet ifrån.</p>

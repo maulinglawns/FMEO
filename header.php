@@ -4,8 +4,11 @@ $htmlHeader = <<<EOF
 <!DOCTYPE HTML>
 <html>
 <head>
+<link rel="stylesheet" type="text/css"
+href="https://fonts.googleapis.com/css?family=Roboto">
 <style>
 body {
+    font-family: Roboto, sans-serif;
     background: #80b3ff;
     text-align: center;
 }
@@ -27,7 +30,6 @@ section {
 }
 h1 {
     text-shadow: 2px 2px lightgray;
-    font-family: sans-serif;
 }
 footer {
     padding: 2px;
@@ -38,7 +40,6 @@ footer {
 
 a:link {
     text-decoration: none;
-    font-weight: bold;
 }
 
 a:visited {
