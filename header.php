@@ -34,7 +34,6 @@ footer {
     margin: auto;
     margin-top: 20px;
     font-variant: small-caps;
-    color: white;
 }
 
 a:link {
