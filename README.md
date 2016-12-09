@@ -32,3 +32,5 @@ Some screenshots below
 ![login window](scrots/FMEO1.png "Login window")
 
 ![logged in](scrots/FMEO2.png "Logged in")
+
+![file download](scrots/FMEO3.png "Download processed file")
