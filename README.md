@@ -27,7 +27,8 @@ Nevertheless, the license is as below.
 
 --
 
-Some screenshots
+Some screenshots below
 
 ![login window](scrots/FMEO1.png "Login window")
 
+![logged in](scrots/FMEO2.png "Logged in")
