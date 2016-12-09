@@ -30,10 +30,13 @@ Nevertheless, the license is as below.
 **Some screenshots below**
 
 Login window
+
 ![login window](scrots/FMEO1.png "Login window")
 
 User is logged in
+
 ![logged in](scrots/FMEO2.png "Logged in")
 
 File is processed and ready for download
+
 ![file download](scrots/FMEO3.png "Download processed file")
