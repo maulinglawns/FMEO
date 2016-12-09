@@ -24,7 +24,10 @@ Nevertheless, the license is as below.
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 --
+
 Some screenshots
+
 ![login window](scrots/FMEO1.png "Login window")
 
