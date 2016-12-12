@@ -36,7 +36,6 @@ if (! isset($_SESSION['failed'])) {
 // Redirect after more than $limit attempts at logging in
 if ($_SESSION['failed'] > 2) {
     header('Location: notWelcome.php');
-    /*  todo: Replace the above with proper error page */
 }   
 
 if ($_SESSION['loggedin'] != "true") {
